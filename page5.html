@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope</title>
+    
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        background: #F8F3ED;
+        color: #493B3D;
+        font-family: 'DM Sans', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 650px;
+        padding: 55px 45px;
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid #E8D8D0;
+        border-radius: 20px;
+        box-shadow: 0 15px 45px rgba(99, 59, 69, 0.07);
+        text-align: center;
+
+        animation: appear 0.9s ease forwards;
+    }
+
+    h1, h2 {
+        font-family: 'Playfair Display', serif;
+        color: #633B45;
+        line-height: 1.3;
+        margin-bottom: 22px;
+    }
+
+    h1 {
+        font-size: clamp(2.2rem, 7vw, 3.5rem);
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    h5 {
+        color: #80515B;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.9;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    b, strong {
+        color: #633B45;
+        font-weight: 700;
+    }
+
+    .top-label {
+        color: #A66B70;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+
+    .next-btn {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 15px 27px;
+        background: #633B45;
+        color: #FFFFFF;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .next-btn:hover {
+        background: #80515B;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(99, 59, 69, 0.18);
+    }
+
+    .page-number {
+        margin-top: 35px;
+        color: #A68C8D;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .divider {
+        width: 55px;
+        height: 2px;
+        background: #D6B6B3;
+        margin: 25px auto;
+        border: none;
+    }
+
+    .closing {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        color: #633B45;
+    }
+
+    /* Page entrance animation */
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Page exit animation */
+
+    body.leaving .container {
+        opacity: 0;
+        transform: translateY(-12px);
+        transition: all 0.25s ease;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 18px;
+        }
+
+        .container {
+            padding: 40px 23px;
+            border-radius: 16px;
+        }
+
+        p {
+            font-size: 0.94rem;
+            line-height: 1.85;
+        }
+
+        .next-btn {
+            width: 100%;
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="top-label">Before you go...</div>
+
+        <h2>I seriously want to hear your voice and see you again...</h2>
+
+        <hr class="divider">
+
+        <p>
+            I will just try my luck to call you. I genuinely
+            hope you'll pick up, not because this is enough
+            for you to change your mind and believe I'm not
+            here to play you, but because I hope this softens
+            your heart a bit, though I know you owe me no call,
+            not even attention.
+        </p>
+
+        <p>
+            And when I come around by December, I genuinely
+            wish you can grant me the wish to see you again.
+            Not because I expect one visit to fix everything,
+            but because I'd really love to see you and talk
+            to you again.
+        </p>
+
+        <p>
+            I don't know exactly where we go from here, and
+            I don't want to assume that everything will be
+            okay just because I've finally found the words
+            to express myself.
+        </p>
+
+        <p>
+            I just hope this softens your heart a bit and
+            makes you consider granting me a call 🙏.
+        </p>
+
+        <hr class="divider">
+
+        <p class="closing">
+            I still care, <b>babe.</b>
+        </p>
+
+        <p>
+            More than my actions have shown.
+            And I'm truly sorry. 🫂🫂🫂
+        </p>
+
+        <div class="page-number">05 — 05</div>
+
+    </div>
+    
+    
+<script>
+    // Smooth transition when moving between pages
+
+    document.querySelectorAll('.next-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const destination = this.href;
+
+            document.body.classList.add('leaving');
+
+            setTimeout(() => {
+                window.location.href = destination;
+            }, 250);
+        });
+    });
+</script>
+</body>
+</html>
